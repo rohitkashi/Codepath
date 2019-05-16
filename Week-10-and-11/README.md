@@ -53,5 +53,42 @@ ____________________________________________________
    + ET CINS Active Threat Intelligence Poor Reputation IP TCP group 80 (17 times)
    + ET CINS Active Threat Intelligence Poor Reputation IP TCP group 37 (9 times)
 + Total HoneyPot Activity Period: 24 Hours
-+ Data Captured from Honeypot's and Sensor's: JSON Output file: session.json
++ Data Captured from Honeypot's and Sensor's: session.json
+
+ISSUES
+______
+1) MODERNHONEYNET SERVER SUPERUSER PASSWORD RESET:
+   I had Forgotten the Superuser Password which was set during the Installation Phase of the Modern Honeynet Admin Application Setup: 
+   + In the Setup of the Modern Honeynet Admin Application the User is prompted to set a Password for the Superuser.
+   + I had the Setup a Password but had forgotten it. 
+   + MHN Troublehshooting Guide to the Rescue: https://github.com/threatstream/mhn/wiki/MHN-Troubleshooting-Guide 
+   + The "I can't reset my password because I fat fingered the email during the install" Section in the MHN Troubleshooting
+     Guide suggests using the Python Script manual_password_reset.py to Reset the Superuser Password
+     "python /opt/mhn/server/manual_password_reset.py"
+     but the Default Ubuntu 14.04 LTS VM Image 
+     available from Google Cloud Platform Compute Engine 
+     used to create the Modern Honeynet Server did not have the following Python Packages which were Required by the Password Reset Script 
+     + flask_security
+     + flask_sqlalchemy
+     + xmltodict
+     + celery
+     + bson
+     + mongoengine
+     + pygal
+     + bcrypt
+     Preventing it from Executing Correctly.
+   + After installing these Python Packages using the PIP Package Manager [Command: "pip install PACKAGE_NAME --user"]
+     I was able to Reset the Superuser Password. 
+   + The Super User's Password can be Reset from The Modern Honeynet Web Application
+     by going to URL: http://SERVER_IP/ui/add-user/ -> Change Password
+     but this relied on the following Mail Server Field's to be set in the Setup Stage of the Modern Honeynet Admin Application  
+     + Mail server address ["localhost"]:
+     + Mail server port [25]:
+     + Use TLS for email?: y/n n
+     + Use SSL for email?: y/n n
+     + Mail server username [""]:
+     + Mail server password [""]:
+     + Mail default sender [""]:
+     I did not set the correct fields, hence I could do Reset the Password from the Web Application. 
+
 
