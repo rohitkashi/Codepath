@@ -1,11 +1,11 @@
 
-COURSE:Codepath Cybersecurity
-WEEK(S): 10,11
-PROJECT: Honeypot
-AUTHOR: Rohit Chandra Tejaswi Kashibatla 
-STUDENT ID: 012530830
-EMAIL:  rohitchandratejaswi.kashibatla@sjsu.edu
-CLOUD HOSTING PROVIDER: Google Cloud Platform
++ COURSE:Codepath Cybersecurity
++ WEEK(S): 10,11
++ PROJECT: Honeypot
++ AUTHOR: Rohit Chandra Tejaswi Kashibatla 
++ STUDENT ID: 012530830
++ EMAIL:  rohitchandratejaswi.kashibatla@sjsu.edu
++ CLOUD HOSTING PROVIDER: Google Cloud Platform
 
 DEPLOYED HONEYPOT'S AND SENSOR'S: 
 _________________________________
